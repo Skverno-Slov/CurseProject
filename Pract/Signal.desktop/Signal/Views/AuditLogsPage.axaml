@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+             x:Class="Signal.Views.AuditLogsPage"
+             xmlns:vm="using:Signal.ViewModels"
+             x:DataType="vm:AuditLogsPageViewModel"
+             Loaded="AuditLogsPage_Loaded">
+	<DockPanel Margin="20">
+		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
+			<TextBox Width="160" Watermark="Логин" Text="{Binding UserLoginFilter}"/>
+			<TextBox Width="160" Watermark="Сущность (user)" Text="{Binding EntityFilter}"/>
+			<TextBox Width="180" Watermark="Действие (UPDATE)" Text="{Binding ActionFilter}"/>
+			<Button Content="Фильтровать" Command="{Binding ApplyFilterCommand}"/>
+			<Button Content="Сбросить" Command="{Binding ResetFilterCommand}"/>
+			<Button Content="Обновить" Command="{Binding LoadAuditLogsCommand}"/>
+		</StackPanel>
+
+		<StackPanel>
+			<DataGrid ItemsSource="{Binding Logs}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      GridLinesVisibility="All">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Дата" Binding="{Binding CreatedAt}" Width="170"/>
+					<DataGridTextColumn Header="Логин" Binding="{Binding UserLogin}" Width="120"/>
+					<DataGridTextColumn Header="Действие" Binding="{Binding Action}" Width="220"/>
+					<DataGridTextColumn Header="Сущность" Binding="{Binding EntityName}" Width="200"/>
+					<DataGridTextColumn Header="ID объекта" Binding="{Binding EntityId}" Width="90"/>
+					<DataGridTextColumn Header="IP-адрес" Binding="{Binding IpAddress}" Width="140"/>
+					<DataGridTextColumn Header="Детали" Binding="{Binding Details}" Width="*"/>
+				</DataGrid.Columns>
+			</DataGrid>
+
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,15,0,0">
+				<Button Content="◀" Command="{Binding PrevPageCommand}"/>
+				<TextBlock VerticalAlignment="Center">
+					<Run Text="{Binding CurrentPage}"/>
+					<Run Text="/"/>
+					<Run Text="{Binding TotalPages}"/>
+				</TextBlock>
+				<Button Content="▶" Command="{Binding NextPageCommand}"/>
+			</StackPanel>
+		</StackPanel>
+	</DockPanel>
+</UserControl>
