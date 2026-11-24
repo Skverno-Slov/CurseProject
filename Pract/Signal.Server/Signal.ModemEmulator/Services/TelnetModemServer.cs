@@ -165,7 +165,6 @@ namespace Signal.ModemEmulator.Services
 
                     byte b = _singleByte[0];
 
-                    // Фильтруем служебные Telnet IAC-команды (0xFF) от PuTTY / системного telnet
                     if (b == 0xFF)
                     {
                         await SkipTelnetIacAsync(cancellationToken);
@@ -201,7 +200,6 @@ namespace Signal.ModemEmulator.Services
 
                     _skipNextLfOrNul = false;
 
-                    // Поддержка Backspace / Delete при ручном вводе в Telnet
                     if (b == 0x08 || b == 0x7F)
                     {
                         if (sb.Length > 0)

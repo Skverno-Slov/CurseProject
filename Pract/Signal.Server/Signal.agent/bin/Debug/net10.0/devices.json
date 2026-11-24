@@ -1,0 +1,144 @@
+[
+  {
+    "Ip": "192.168.100.192",
+    "Login": null,
+    "Password": null,
+    "Params": [
+      {
+        "Command": "<0000/ber?",
+        "Name": "ber",
+        "Uncorrect": "99999",
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/EBN?",
+        "Name": "ebn",
+        "Uncorrect": "99.9",
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TMP?",
+        "Name": "tmp",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/RSL?",
+        "Name": "rsl",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TXO?",
+        "Name": "txo",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TTC?",
+        "Name": "ttc",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      }
+    ]
+  },
+  {
+    "Ip": "Some IP",
+    "Login": null,
+    "Password": null,
+    "Params": [
+      {
+        "Command": "cmd?",
+        "Name": "new_param",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      }
+    ]
+  },
+  {
+    "Ip": "Some IP",
+    "Login": null,
+    "Password": null,
+    "Params": []
+  },
+  {
+    "Ip": "Some IP",
+    "Login": null,
+    "Password": null,
+    "Params": []
+  },
+  {
+    "Ip": "Some IP",
+    "Login": null,
+    "Password": null,
+    "Params": []
+  },
+  {
+    "Ip": "0.0.0.0",
+    "Login": null,
+    "Password": null,
+    "Params": []
+  },
+  {
+    "Ip": "0.0.0.1",
+    "Login": null,
+    "Password": null,
+    "Params": []
+  },
+  {
+    "Ip": "12312312312",
+    "Login": null,
+    "Password": null,
+    "Params": [
+      {
+        "Command": "cmd?",
+        "Name": "new_param",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      }
+    ]
+  },
+  {
+    "Ip": "127.0.0.1",
+    "Login": "comtech",
+    "Password": "comtech",
+    "Params": [
+      {
+        "Command": "<0000/EBN?",
+        "Name": "ebn",
+        "Uncorrect": "99.9",
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TMP?",
+        "Name": "tmp",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/ber?",
+        "Name": "ber",
+        "Uncorrect": "99999",
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TTC?",
+        "Name": "ttc",
+        "Uncorrect": null,
+        "PollIntervalSeconds": 30,
+        "Annotations": null
+      }
+    ]
+  }
+]

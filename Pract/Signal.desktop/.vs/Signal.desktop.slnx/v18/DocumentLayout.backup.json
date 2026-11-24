@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|solutionrelative:signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\viewmodels\\jsonconfigpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|solutionrelative:signal\\viewmodels\\jsonconfigpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|solutionrelative:signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\views\\jsonconfigpage.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -265,11 +265,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Signal",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Signal.csproj",
               "RelativeDocumentMoniker": "Signal\\Signal.csproj",
@@ -278,7 +278,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-11-23T10:20:10.697Z",
-              "EditorCaption": "",
               "OwnerCaption": "Signal"
             },
             {
@@ -322,13 +321,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "JsonConfigPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "ToolTip": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "RelativeToolTip": "Signal\\ViewModels\\JsonConfigPageViewModel.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAAwKQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAywM4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T01:25:28.653Z",
               "EditorCaption": "",

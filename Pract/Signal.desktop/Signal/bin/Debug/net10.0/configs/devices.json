@@ -111,5 +111,41 @@
         }
       }
     ]
+  },
+  {
+    "Ip": "127.0.0.1",
+    "Login": "comtech",
+    "Password": "comtech",
+    "Params": [
+      {
+        "Command": "<0000/EBN?",
+        "Name": "ebn",
+        "Uncorrect": "99.9",
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TMP?",
+        "Name": "tmp",
+        "Uncorrect": null,
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/ber?",
+        "Name": "ber",
+        "Uncorrect": "99999",
+        "Annotations": null
+      },
+      {
+        "Command": "<0000/TTC?",
+        "Name": "ttc",
+        "Uncorrect": null,
+        "Annotations": {
+          "0": "AMI",
+          "1": "B8ZC",
+          "2": "B6ZC",
+          "3": "HDB3"
+        }
+      }
+    ]
   }
 ]

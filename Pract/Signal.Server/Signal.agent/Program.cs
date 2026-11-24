@@ -296,7 +296,6 @@ public class NetworkPollingService(
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            // Перед новым циклом опроса пробуем дослать накопленный офлайн-кэш
             await _offlineQueue.FlushIfAvailableAsync(_httpClient);
 
             List<DeviceConfig> devices = await _configManager.LoadLocalConfigAsync("devices.json");
