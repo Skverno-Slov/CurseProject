@@ -17,8 +17,10 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<EquipmentService>();
 builder.Services.AddScoped<AuditLogService>();
 
-var connectionString = "Host=localhost;Port=5432;Database=signal_track_db;Username=user1;Password=123";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Строка подключения 'DefaultConnection' не найдена в конфигурации.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString)); builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddAuthentication(options =>

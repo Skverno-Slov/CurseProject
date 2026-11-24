@@ -1,0 +1,10 @@
+{
+  "listenIp": "0.0.0.0",
+  "port": 23,
+  "modemAddress": "0000",
+  "login": "comtech",
+  "password": "comtech",
+  "echoInput": true,
+  "autoDrift": true,
+  "customMetrics": {}
+}

@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using Signal.Server.Data.Dtos;
-using Signal.Server.Data.Models.Models;
+using Signal.Server.Data.Models;
 using Signal.Server.Services;
 
 namespace Signal.Test

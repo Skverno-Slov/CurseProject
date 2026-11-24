@@ -4565,8 +4565,11 @@ namespace Signal.Dtos
         [property: JsonPropertyName("serialNumber")] string SerialNumber,
         [property: JsonPropertyName("name")] string Name,
         [property: JsonPropertyName("model")] string Model,
-        [property: JsonPropertyName("statusName")] string StatusName
-);
+        [property: JsonPropertyName("statusName")] string StatusName,
+        [property: JsonPropertyName("ipAddress")] string? IpAddress = null,
+        [property: JsonPropertyName("isDeleted")] bool IsDeleted = false,
+        [property: JsonPropertyName("pollEnabled")] bool PollEnabled = true
+    );
 }
 </file>
 
@@ -4761,6 +4764,7 @@ namespace Signal.Models
     {
         public string Address { get; set; } = "127.0.0.1";
         public string Port { get; set; } = "7007";
+        public bool UseHttps { get; set; } = true;
     }
 }
 </file>
@@ -4967,7 +4971,6 @@ namespace Signal.Properties {
 </file>
 
 <file path="Signal.desktop/Signal/Services/ApiService.cs">
-using Avalonia.Controls;
 using Signal.Dtos;
 using Signal.Models;
 using System;
@@ -5000,7 +5003,7 @@ namespace Signal.Services
             {
                 var responce = await client.GetAsync(testUri);
                 var content = await responce.Content.ReadFromJsonAsync<PingResponce>();
-                return content.Service == ApiName;
+                return content?.Service == ApiName;
             }
             catch
             {
@@ -5012,7 +5015,7 @@ namespace Signal.Services
         {
             try
             {
-                await client.PostAsJsonAsync("api/auth/logout", SessionContext.RefreshToken);
+                await client.PostAsJsonAsync("api/auth/logout", new { refreshToken = SessionContext.RefreshToken });
             }
             catch { }
         }
@@ -5021,7 +5024,7 @@ namespace Signal.Services
         {
             try
             {
-                var request = new LoginRequest()
+                var request = new LoginRequest
                 {
                     Login = loign,
                     Password = password
@@ -5029,7 +5032,7 @@ namespace Signal.Services
                 var responce = await client.PostAsJsonAsync("api/auth/login", request);
                 var content = await responce.Content.ReadFromJsonAsync<TokenResponse>();
                 var result = responce.IsSuccessStatusCode;
-                if (result)
+                if (result && content != null)
                 {
                     SessionContext.AccessToken = content.AccessToken;
                     SessionContext.RefreshToken = content.RefreshToken;
@@ -5047,10 +5050,10 @@ namespace Signal.Services
         {
             try
             {
-                var responce = await client.PostAsJsonAsync("api/auth/refresh", SessionContext.RefreshToken);
+                var responce = await client.PostAsJsonAsync("api/auth/refresh", new { refreshToken = SessionContext.RefreshToken });
                 var content = await responce.Content.ReadFromJsonAsync<TokenResponse>();
                 var result = responce.IsSuccessStatusCode;
-                if (result)
+                if (result && content != null)
                 {
                     SessionContext.AccessToken = content.AccessToken;
                     SessionContext.RefreshToken = content.RefreshToken;
@@ -5143,7 +5146,7 @@ namespace Signal.Services
         {
             try
             {
-                return await client.GetFromJsonAsync<List<string>>($"api/auth/roles");
+                return await client.GetFromJsonAsync<List<string>>("api/auth/roles");
             }
             catch
             {
@@ -5155,7 +5158,7 @@ namespace Signal.Services
         {
             try
             {
-                var result = await client.PostAsJsonAsync($"api/auth/register", dto);
+                var result = await client.PostAsJsonAsync("api/auth/register", dto);
                 return result.IsSuccessStatusCode;
             }
             catch
@@ -5164,21 +5167,24 @@ namespace Signal.Services
             }
         }
 
-        void ConfigureClient()
+        public void ConfigureClient()
         {
-            var address = SettingsService.Load().Address;
-            var port = SettingsService.Load().Port;
+            var settings = SettingsService.Load();
+            var address = settings.Address;
+            var port = settings.Port;
+            var scheme = settings.UseHttps ? "https" : "http";
 
             var rootHandler = new HttpClientHandler();
+            var authHandler = new AuthTokenHandler(this)
+            {
+                InnerHandler = rootHandler
+            };
 
-            var authHandler = new AuthTokenHandler(this);
-
-            authHandler.InnerHandler = rootHandler;
-
-            client = new HttpClient(authHandler);
-
-            client.BaseAddress = new Uri($"https://{address}:{port}/");
-            client.Timeout = TimeSpan.FromSeconds(ClientTimeoutSeconds);
+            client = new HttpClient(authHandler)
+            {
+                BaseAddress = new Uri($"{scheme}://{address}:{port}/"),
+                Timeout = TimeSpan.FromSeconds(ClientTimeoutSeconds)
+            };
         }
 
         public async Task<EquipmentResponce?> GetEquipmentAsync(int page)
@@ -5190,6 +5196,19 @@ namespace Signal.Services
             catch
             {
                 return null;
+            }
+        }
+
+        public async Task<bool> AddEquipmentAsync(EquipmentDto dto)
+        {
+            try
+            {
+                var result = await client.PostAsJsonAsync("api/equipment", dto);
+                return result.IsSuccessStatusCode;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -5618,11 +5637,11 @@ namespace Signal.ViewModels
 
         public ObservableCollection<EquipmentDto> Equipment { get; set; } = new();
 
-        [ObservableProperty] 
+        [ObservableProperty]
         int currentPage = 1;
-        [ObservableProperty] 
+        [ObservableProperty]
         int totalPages = 1;
-        [ObservableProperty] 
+        [ObservableProperty]
         int totalEquipment;
 
         [RelayCommand]
@@ -5637,7 +5656,7 @@ namespace Signal.ViewModels
                     Equipment.Add(item);
                 }
                 TotalEquipment = response.TotalEquipment;
-                TotalPages = (int)Math.Ceiling((double)TotalEquipment / PageSize);
+                TotalPages = Math.Max(1, (int)Math.Ceiling((double)TotalEquipment / PageSize));
             }
             NextPageCommand.NotifyCanExecuteChanged();
             PrevPageCommand.NotifyCanExecuteChanged();
@@ -5658,9 +5677,16 @@ namespace Signal.ViewModels
         }
 
         [RelayCommand]
+        async Task AddEquipmentAsync()
+        {
+            MainViewModelHandler.Instance.CurrentPage = new EquipmentRedactorPage();
+            await LoadEquipmentAsync();
+        }
+
+        [RelayCommand]
         async Task EditEquipmentAsync(EquipmentDto? item)
         {
-            if (item is null) 
+            if (item is null)
                 return;
             MainViewModelHandler.Instance.CurrentPage = new EquipmentRedactorPage(item);
             await LoadEquipmentAsync();
@@ -5688,6 +5714,7 @@ using Signal.Models;
 using Signal.Services;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -5697,26 +5724,35 @@ namespace Signal.ViewModels
     public partial class EquipmentRedactorPageViewModel : ViewModelBase
     {
         private readonly ApiService apiService;
-        private readonly EquipmentDto editingEquipment;
+        private readonly EquipmentDto? editingEquipment;
 
         [ObservableProperty]
         string name = string.Empty;
         [ObservableProperty]
         string serialNumber = string.Empty;
-        [ObservableProperty] 
+        [ObservableProperty]
         string model = string.Empty;
-        [ObservableProperty] 
-        string statusName = string.Empty;
+        [ObservableProperty]
+        string statusName = "Ok";
+        [ObservableProperty]
+        string ipAddress = string.Empty;
+        [ObservableProperty]
+        bool isEditMode;
 
-        public EquipmentRedactorPageViewModel(ApiService service, EquipmentDto item)
+        public EquipmentRedactorPageViewModel(ApiService service, EquipmentDto? item = null)
         {
             apiService = service;
             editingEquipment = item;
+            IsEditMode = editingEquipment != null;
 
-            Name = editingEquipment.Name;
-            SerialNumber = editingEquipment.SerialNumber;
-            Model = editingEquipment.Model;
-            StatusName = editingEquipment.StatusName;
+            if (IsEditMode && editingEquipment != null)
+            {
+                Name = editingEquipment.Name;
+                SerialNumber = editingEquipment.SerialNumber;
+                Model = editingEquipment.Model;
+                StatusName = editingEquipment.StatusName;
+                IpAddress = editingEquipment.IpAddress ?? string.Empty;
+            }
         }
 
         [RelayCommand]
@@ -5728,20 +5764,45 @@ namespace Signal.ViewModels
         [RelayCommand]
         async Task SaveAsync()
         {
-            if (Name != editingEquipment.Name ||
-                SerialNumber != editingEquipment.SerialNumber ||
-                Model != editingEquipment.Model ||
-                StatusName != editingEquipment.StatusName)
+            if (IsEditMode && editingEquipment != null)
             {
-                var updateDto = new EquipmentDto(
-                    editingEquipment.EquipmentId,
-                    SerialNumber,
-                    Name,
-                    Model,
-                    StatusName
-                );
+                if (Name != editingEquipment.Name ||
+                    SerialNumber != editingEquipment.SerialNumber ||
+                    Model != editingEquipment.Model ||
+                    StatusName != editingEquipment.StatusName ||
+                    IpAddress != (editingEquipment.IpAddress ?? string.Empty))
+                {
+                    var updateDto = new EquipmentDto(
+                        editingEquipment.EquipmentId,
+                        SerialNumber,
+                        Name,
+                        Model,
+                        StatusName,
+                        string.IsNullOrWhiteSpace(IpAddress) ? null : IpAddress.Trim(),
+                        editingEquipment.IsDeleted,
+                        editingEquipment.PollEnabled
+                    );
 
-                await apiService.UpdateEquipmentAsync(editingEquipment.EquipmentId, updateDto);
+                    await apiService.UpdateEquipmentAsync(editingEquipment.EquipmentId, updateDto);
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(SerialNumber))
+                {
+                    var createDto = new EquipmentDto(
+                        0,
+                        SerialNumber.Trim(),
+                        Name.Trim(),
+                        string.IsNullOrWhiteSpace(Model) ? "Other" : Model.Trim(),
+                        string.IsNullOrWhiteSpace(StatusName) ? "Ok" : StatusName.Trim(),
+                        string.IsNullOrWhiteSpace(IpAddress) ? null : IpAddress.Trim(),
+                        false,
+                        true
+                    );
+
+                    await apiService.AddEquipmentAsync(createDto);
+                }
             }
 
             Close();
@@ -5756,6 +5817,7 @@ using Avalonia.Platform.Storage;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Signal.Models;
+using Signal.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -5774,6 +5836,7 @@ namespace Signal.ViewModels
         readonly JsonSerializerOptions jsonOptions = new()
         {
             WriteIndented = true,
+            PropertyNameCaseInsensitive = true,
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
         };
 
@@ -5844,7 +5907,11 @@ namespace Signal.ViewModels
 
                 string json = File.ReadAllText(localConfigPath);
                 var list = JsonSerializer.Deserialize<List<DeviceConfig>>(json, jsonOptions) ?? new List<DeviceConfig>();
-                Devices = new ObservableCollection<DeviceConfig>(list);
+                Devices.Clear();
+                foreach (var item in list)
+                {
+                    Devices.Add(item);
+                }
                 StatusMessage = "Конфигурация успешно загружена";
             }
             catch (Exception ex)
@@ -5912,20 +5979,147 @@ namespace Signal.ViewModels
         }
 
         [RelayCommand]
-        private void AddDevice()
+        private async Task ImportConfigAsync()
         {
-            var newDevice = new DeviceConfig { Ip = "0.0.0.0", Login = "new_login", Password = "pwd" };
-            Devices.Add(newDevice);
-            SelectedDevice = newDevice;
+            if (topLevel is null)
+                return;
+
+            var options = new FilePickerOpenOptions
+            {
+                Title = "Импорт JSON-конфигурации",
+                AllowMultiple = false,
+                FileTypeFilter = new[]
+                {
+                    new FilePickerFileType("JSON файлы (*.json)") { Patterns = new[] { "*.json" } },
+                    new FilePickerFileType("Все файлы (*.*)") { Patterns = new[] { "*.*" } }
+                }
+            };
+
+            var files = await topLevel.StorageProvider.OpenFilePickerAsync(options);
+            var file = files.FirstOrDefault();
+            if (file is not null)
+            {
+                try
+                {
+                    await using var stream = await file.OpenReadAsync();
+                    using var reader = new StreamReader(stream);
+                    string json = await reader.ReadToEndAsync();
+
+                    var list = JsonSerializer.Deserialize<List<DeviceConfig>>(json, jsonOptions);
+                    if (list is null)
+                    {
+                        StatusMessage = "Ошибка: неверный формат JSON-файла";
+                        return;
+                    }
+
+                    SelectedDevice = null;
+                    SelectedParam = null;
+                    CurrentAnnotations.Clear();
+                    Devices.Clear();
+
+                    foreach (var item in list)
+                    {
+                        Devices.Add(item);
+                    }
+
+                    var dir = Path.GetDirectoryName(localConfigPath);
+                    if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+                    string normalizedJson = JsonSerializer.Serialize(Devices.ToList(), jsonOptions);
+                    File.WriteAllText(localConfigPath, normalizedJson);
+
+                    SelectedDevice = Devices.FirstOrDefault();
+                    StatusMessage = $"Файл успешно импортирован (устройств: {Devices.Count})";
+                }
+                catch (Exception ex)
+                {
+                    StatusMessage = $"Ошибка импорта файла: {ex.Message}";
+                }
+            }
         }
 
         [RelayCommand]
-        private void DeleteDevice()
+        private async Task UploadToServerAsync()
         {
-            if (SelectedDevice is not null)
+            try
             {
-                Devices.Remove(SelectedDevice);
+                SyncAnnotationsToDictionary();
+                SaveConfig();
+
+                StatusMessage = "Загрузка конфигурации на сервер...";
+                bool isSaved = await ApiService.Instance.SaveAgentConfigAsync(Devices.ToList());
+                StatusMessage = isSaved
+                    ? "Конфигурация успешно загружена на сервер"
+                    : "Ошибка загрузки конфигурации на сервер";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Ошибка загрузки на сервер: {ex.Message}";
+            }
+        }
+
+        [RelayCommand]
+        private async Task ImportFromServerAsync()
+        {
+            try
+            {
+                SyncAnnotationsToDictionary();
+                StatusMessage = "Импорт конфигурации с сервера...";
+
+                var serverDevices = await ApiService.Instance.GetAgentConfigAsync();
+                if (serverDevices is null)
+                {
+                    StatusMessage = "Ошибка импорта конфигурации с сервера";
+                    return;
+                }
+
+                var existingByIp = Devices
+                    .Where(d => !string.IsNullOrWhiteSpace(d.Ip))
+                    .GroupBy(d => d.Ip.Trim())
+                    .ToDictionary(g => g.Key, g => g.First());
+
                 SelectedDevice = null;
+                SelectedParam = null;
+                CurrentAnnotations.Clear();
+                Devices.Clear();
+
+                foreach (var serverDev in serverDevices)
+                {
+                    if (!string.IsNullOrWhiteSpace(serverDev.Ip) &&
+                        existingByIp.TryGetValue(serverDev.Ip.Trim(), out var localDev))
+                    {
+                        if (string.IsNullOrWhiteSpace(serverDev.Login))
+                            serverDev.Login = localDev.Login;
+                        if (string.IsNullOrWhiteSpace(serverDev.Password))
+                            serverDev.Password = localDev.Password;
+
+                        if (localDev.Params is not null && serverDev.Params is not null)
+                        {
+                            foreach (var sParam in serverDev.Params)
+                            {
+                                var matchedLocalParam = localDev.Params.FirstOrDefault(
+                                    lp => lp.Command == sParam.Command || lp.Name == sParam.Name);
+                                if (matchedLocalParam?.Annotations is not null && sParam.Annotations is null)
+                                {
+                                    sParam.Annotations = new Dictionary<string, string>(matchedLocalParam.Annotations);
+                                }
+                            }
+                        }
+                    }
+
+                    Devices.Add(serverDev);
+                }
+
+                var dir = Path.GetDirectoryName(localConfigPath);
+                if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+                string json = JsonSerializer.Serialize(Devices.ToList(), jsonOptions);
+                File.WriteAllText(localConfigPath, json);
+
+                SelectedDevice = Devices.FirstOrDefault();
+                StatusMessage = $"Импортировано с сервера устройств: {Devices.Count}";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Ошибка импорта с сервера: {ex.Message}";
             }
         }
 
@@ -6321,6 +6515,8 @@ namespace Signal.ViewModels
         [ObservableProperty]
         string port = "";
         [ObservableProperty]
+        bool useHttps = true;
+        [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(SaveSettingsCommand))]
         bool isConnected;
         [ObservableProperty]
@@ -6334,19 +6530,24 @@ namespace Signal.ViewModels
 
         string savedAddress;
         string savedPort;
+        bool savedUseHttps;
 
         public SettingsWindowViewModel()
         {
-            savedAddress = SettingsService.Load().Address;
-            savedPort = SettingsService.Load().Port;
+            var settings = SettingsService.Load();
+            savedAddress = settings.Address;
+            savedPort = settings.Port;
+            savedUseHttps = settings.UseHttps;
             Address = savedAddress;
             Port = savedPort;
-            IsConnected = IsSaved = Address == savedAddress && Port == savedPort;
+            UseHttps = savedUseHttps;
+            IsConnected = IsSaved = Address == savedAddress && Port == savedPort && UseHttps == savedUseHttps;
         }
 
         void ValidateInput()
         {
             Errors.Clear();
+            IsDataCorrect = true;
             if (string.IsNullOrWhiteSpace(Address))
             {
                 Errors.Add("Адрес не может быть пустым");
@@ -6364,14 +6565,15 @@ namespace Signal.ViewModels
                 IsDataCorrect = false;
             }
 
-            IsSaved = IsConnected = Port == savedPort && Address == savedAddress;
+            IsSaved = IsConnected = Port == savedPort && Address == savedAddress && UseHttps == savedUseHttps;
         }
 
         [RelayCommand]
         async Task TryConnectAsync()
         {
             ConnectionState = "Подключение...";
-            IsConnected = await ApiService.Instance.CheckConnectionAsync(new Uri($"https://{Address}:{Port}/api/ping"));
+            var scheme = UseHttps ? "https" : "http";
+            IsConnected = await ApiService.Instance.CheckConnectionAsync(new Uri($"{scheme}://{Address}:{Port}/api/ping"));
             ConnectionState = "Проверить";
         }
 
@@ -6381,15 +6583,23 @@ namespace Signal.ViewModels
             var settings = new NetworkSettings()
             {
                 Address = Address,
-                Port = Port
+                Port = Port,
+                UseHttps = UseHttps
             };
             SettingsService.Save(settings);
+            ApiService.Instance.ConfigureClient();
 
-            IsSaved = Address == SettingsService.Load().Address && Port == SettingsService.Load().Port;
+            var loaded = SettingsService.Load();
+            savedAddress = loaded.Address;
+            savedPort = loaded.Port;
+            savedUseHttps = loaded.UseHttps;
+
+            IsSaved = Address == savedAddress && Port == savedPort && UseHttps == savedUseHttps;
         }
 
         partial void OnAddressChanged(string value) => ValidateInput();
         partial void OnPortChanged(string value) => ValidateInput();
+        partial void OnUseHttpsChanged(bool value) => ValidateInput();
     }
 }
 </file>
@@ -6638,9 +6848,9 @@ namespace Signal.ViewModels
              Loaded="AuditLogsPage_Loaded">
 	<DockPanel Margin="20">
 		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
-			<TextBox Width="160" Watermark="Логин админа..." Text="{Binding UserLoginFilter}"/>
-			<TextBox Width="160" Watermark="Сущность (user, equipment)..." Text="{Binding EntityFilter}"/>
-			<TextBox Width="180" Watermark="Действие (UPDATE, DELETE)..." Text="{Binding ActionFilter}"/>
+			<TextBox Width="160" Watermark="Логин" Text="{Binding UserLoginFilter}"/>
+			<TextBox Width="160" Watermark="Сущность (user)" Text="{Binding EntityFilter}"/>
+			<TextBox Width="180" Watermark="Действие (UPDATE)" Text="{Binding ActionFilter}"/>
 			<Button Content="Фильтровать" Command="{Binding ApplyFilterCommand}"/>
 			<Button Content="Сбросить" Command="{Binding ResetFilterCommand}"/>
 			<Button Content="Обновить" Command="{Binding LoadAuditLogsCommand}"/>
@@ -6650,16 +6860,15 @@ namespace Signal.ViewModels
 			<DataGrid ItemsSource="{Binding Logs}"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
-                      GridLinesVisibility="All"
-                      Height="380">
+                      GridLinesVisibility="All">
 				<DataGrid.Columns>
-					<DataGridTextColumn Header="Дата (UTC)" Binding="{Binding CreatedAt}" Width="160"/>
-					<DataGridTextColumn Header="Администратор" Binding="{Binding UserLogin}" Width="120"/>
-					<DataGridTextColumn Header="Действие" Binding="{Binding Action}" Width="160"/>
-					<DataGridTextColumn Header="Сущность" Binding="{Binding EntityName}" Width="120"/>
+					<DataGridTextColumn Header="Дата" Binding="{Binding CreatedAt}" Width="170"/>
+					<DataGridTextColumn Header="Логин" Binding="{Binding UserLogin}" Width="120"/>
+					<DataGridTextColumn Header="Действие" Binding="{Binding Action}" Width="220"/>
+					<DataGridTextColumn Header="Сущность" Binding="{Binding EntityName}" Width="200"/>
 					<DataGridTextColumn Header="ID объекта" Binding="{Binding EntityId}" Width="90"/>
-					<DataGridTextColumn Header="IP-адрес" Binding="{Binding IpAddress}" Width="120"/>
-					<DataGridTextColumn Header="Детали (JSON)" Binding="{Binding Details}" Width="*"/>
+					<DataGridTextColumn Header="IP-адрес" Binding="{Binding IpAddress}" Width="140"/>
+					<DataGridTextColumn Header="Детали" Binding="{Binding Details}" Width="*"/>
 				</DataGrid.Columns>
 			</DataGrid>
 
@@ -6713,6 +6922,8 @@ public partial class AuditLogsPage : UserControl
              Loaded="EquipmentPage_Loaded">
 	<DockPanel Margin="20">
 		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
+			<Button Content="Добавить оборудование"
+					Command="{Binding AddEquipmentCommand}" Margin="0,0,5,0"/>
 			<Button Content="Обновить" Command="{Binding LoadEquipmentCommand}"/>
 		</StackPanel>
 
@@ -6725,6 +6936,7 @@ public partial class AuditLogsPage : UserControl
 					<DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
 					<DataGridTextColumn Header="Серийный номер" Binding="{Binding SerialNumber}" Width="*"/>
 					<DataGridTextColumn Header="Модель" Binding="{Binding Model}" Width="*"/>
+					<DataGridTextColumn Header="IP-адрес" Binding="{Binding IpAddress}" Width="*"/>
 					<DataGridTextColumn Header="Статус" Binding="{Binding StatusName}" Width="*"/>
 
 					<DataGridTemplateColumn Header="Действия" Width="*">
@@ -6808,13 +7020,22 @@ public partial class EquipmentPage : UserControl
 				<TextBox Text="{Binding Model}"/>
 			</StackPanel>
 			<StackPanel Margin="5">
+				<TextBlock Text="IP-адрес:"/>
+				<TextBox Text="{Binding IpAddress}"/>
+			</StackPanel>
+			<StackPanel Margin="5">
 				<TextBlock Text="Статус:"/>
 				<TextBox Text="{Binding StatusName}"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
 				<Button Content="Назад" Command="{Binding CloseCommand}" Margin="0,0,5,0"/>
-				<Button Content="Сохранить" Command="{Binding SaveCommand}"/>
+				<Button Content="Сохранить"
+				        Command="{Binding SaveCommand}"
+				        IsVisible="{Binding IsEditMode}"/>
+				<Button Content="Добавить"
+				        Command="{Binding SaveCommand}"
+				        IsVisible="{Binding !IsEditMode}"/>
 			</StackPanel>
 		</StackPanel>
 	</ScrollViewer>
@@ -6833,7 +7054,7 @@ namespace Signal;
 
 public partial class EquipmentRedactorPage : UserControl
 {
-    public EquipmentRedactorPage(EquipmentDto item)
+    public EquipmentRedactorPage(EquipmentDto? item = null)
     {
         InitializeComponent();
         DataContext = new EquipmentRedactorPageViewModel(ApiService.Instance, item);
@@ -6855,6 +7076,9 @@ public partial class EquipmentRedactorPage : UserControl
 		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,15">
 			<Button Content="Сохранить" Command="{Binding SaveConfigCommand}" Classes="accent"/>
 			<Button Content="Экспортировать" Command="{Binding ExportConfigCommand}"/>
+			<Button Content="Импортировать" Command="{Binding ImportConfigCommand}"/>
+			<Button Content="Загрузить на сервер" Command="{Binding UploadToServerCommand}"/>
+			<Button Content="Импорт с сервера" Command="{Binding ImportFromServerCommand}"/>
 			<TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center" Foreground="Gray" Margin="10,0,0,0"/>
 		</StackPanel>
 
@@ -6862,16 +7086,12 @@ public partial class EquipmentRedactorPage : UserControl
 
 			<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 				<StackPanel Margin="5">
-					<TextBlock Text="Устройства" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"/>
-					<StackPanel Orientation="Horizontal" Margin="5">
-						<Button Content="+" Command="{Binding AddDeviceCommand}" Width="30" Margin="0,0,5,0"/>
-						<Button Content="-" Command="{Binding DeleteDeviceCommand}" Width="30"/>
-					</StackPanel>
+					<TextBlock Text="Устройства" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,0,10"/>
 					<DataGrid ItemsSource="{Binding Devices}"
 							  SelectedItem="{Binding SelectedDevice}"
 							  AutoGenerateColumns="False" IsReadOnly="False" GridLinesVisibility="All">
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="IP-Адрес" Binding="{Binding Ip}"/>
+							<DataGridTextColumn Header="IP-Адрес" Binding="{Binding Ip}" IsReadOnly="True"/>
 							<DataGridTextColumn Header="Логин" Binding="{Binding Login}"/>
 							<DataGridTextColumn Header="Пароль" Binding="{Binding Password}"/>
 						</DataGrid.Columns>
@@ -7306,6 +7526,10 @@ public partial class SessionsPage : UserControl
 				<TextBox Text="{Binding Port, Mode=TwoWay}"
                          Watermark="Например: 8080"/>
 			</StackPanel>
+
+			<ToggleSwitch IsChecked="{Binding UseHttps, Mode=TwoWay}"
+                          OnContent="Использовать HTTPS"
+                          OffContent="Использовать HTTP"/>
 		</StackPanel>
 
 		<StackPanel Grid.Row="1" Margin="0,15,0,0">
@@ -8393,7 +8617,7 @@ public class NetworkPollingService(
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -8808,6 +9032,32 @@ public class EquipmentController(EquipmentService equipmentService, AuditLogServ
 
         var readings = await equipmentService.GetLatestReadingsAsync(serialNumber);
         return Ok(readings);
+    }
+
+    [Authorize(Roles = "Администратор")]
+    [HttpPost]
+    public async Task<IActionResult> CreateEquipment([FromBody] EquipmentDto dto)
+    {
+        try
+        {
+            var createdId = await equipmentService.CreateEquipmentAsync(dto);
+            if (createdId is null)
+                return BadRequest(new { message = "Ошибка добавления оборудования" });
+
+            await auditLogService.LogActionAsync(
+                GetCurrentUserId(),
+                "CREATE_EQUIPMENT",
+                "equipment",
+                createdId.Value,
+                dto with { EquipmentId = createdId.Value },
+                GetClientIp());
+
+            return StatusCode(201, new { equipmentId = createdId.Value, message = "Оборудование успешно добавлено" });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
     }
 
     [Authorize(Roles = "Администратор")]
@@ -10508,6 +10758,9 @@ namespace Signal.Server.Services
 {
     public class EquipmentService(ApplicationDbContext context)
     {
+        // Константа безопасности: максимальное число уведомлений, которое клиентское устройство получает за один раз
+        public const int MaxNotificationsPerBatch = 5;
+
         private readonly ApplicationDbContext context = context;
 
         public async Task<PagedLogsResponse> GetEquipmentLogsAsync(
@@ -10657,11 +10910,6 @@ namespace Signal.Server.Services
                 .ToListAsync();
         }
 
-        /// <summary>
-        /// Автоматически синхронизирует таблицы alert и user_alert с текущими записями в reading_log и equipment.
-        /// Гарантирует создание записей в alert и user_alert даже если сбой/предупреждение выставлены
-        /// SQL-триггером check_reading_status(), прямым запросом в БД или через админ-панель.
-        /// </summary>
         public async Task SyncAlertsWithDatabaseStateAsync()
         {
             try
@@ -10669,90 +10917,175 @@ namespace Signal.Server.Services
                 var userIds = await context.Users.Select(u => u.UserId).ToListAsync();
                 if (userIds.Count == 0) return;
 
-                // 1. Проверяем последние записи reading_log со статусом != "ok", для которых ещё нет записи в alert
-                var abnormalLogsWithoutAlert = await context.ReadingLogs
-                    .Include(rl => rl.Equipment)
+                var equipments = await context.Equipment
+                    .Include(e => e.Status)
+                    .Where(e => !e.IsDeleted)
+                    .ToListAsync();
+
+                var allLatestReadings = await context.ViewLatestEquipmentReadings.ToListAsync();
+
+                var recentAbnormalLogs = await context.ReadingLogs
                     .Include(rl => rl.ReadingType)
                     .Include(rl => rl.Status)
-                    .Where(rl => !rl.Equipment.IsDeleted
-                        && rl.Status.Name.ToLower() != "ok"
-                        && !context.Alerts.Any(a => a.ReadingLogId == rl.ReadingLogId))
+                    .Where(rl => !rl.Equipment.IsDeleted && rl.Status.Name.ToLower() != "ok")
                     .OrderByDescending(rl => rl.WriteDateTime)
-                    .Take(30)
+                    .ThenByDescending(rl => rl.ReadingLogId)
+                    .Take(200)
                     .ToListAsync();
 
-                foreach (var log in abnormalLogsWithoutAlert)
-                {
-                    bool isError = log.Status.Name.Equals("error", StringComparison.OrdinalIgnoreCase);
-                    string severity = isError ? "CRITICAL" : "WARNING";
-                    string unitStr = string.IsNullOrWhiteSpace(log.ReadingType.Unit) ? "" : $" {log.ReadingType.Unit}";
-                    string msg = $"Прибор {log.Equipment.Name} ({log.Equipment.SerialNumber}): параметр '{log.ReadingType.Name}' = {log.Value}{unitStr} (статус: {log.Status.Name}).";
-                    if (msg.Length > 255) msg = msg.Substring(0, 255);
-
-                    var newAlert = new Alert
-                    {
-                        EquipmentId = log.EquipmentId,
-                        ReadingLogId = log.ReadingLogId,
-                        Severity = severity,
-                        Message = msg,
-                        IsResolved = false,
-                        CreatedAt = log.WriteDateTime
-                    };
-                    context.Alerts.Add(newAlert);
-                    await context.SaveChangesAsync();
-
-                    foreach (var uid in userIds)
-                    {
-                        context.UserAlerts.Add(new UserAlert
-                        {
-                            AlertId = newAlert.AlertId,
-                            UserId = uid,
-                            IsRead = false
-                        });
-                    }
-                    await context.SaveChangesAsync();
-                }
-
-                // 2. Проверяем оборудование в статусе Warning/Error, у которого нет ни одного активного (нерешённого) алерта
-                var abnormalEquipmentWithoutAlert = await context.Equipment
-                    .Include(e => e.Status)
-                    .Where(e => !e.IsDeleted
-                        && e.Status.Name.ToLower() != "ok"
-                        && !context.Alerts.Any(a => a.EquipmentId == e.EquipmentId && !a.IsResolved))
+                var unresolvedAlerts = await context.Alerts
+                    .Where(a => !a.IsResolved)
+                    .OrderByDescending(a => a.CreatedAt)
+                    .ThenByDescending(a => a.AlertId)
                     .ToListAsync();
 
-                foreach (var eq in abnormalEquipmentWithoutAlert)
+                foreach (var eq in equipments)
                 {
-                    bool isError = eq.Status.Name.Equals("error", StringComparison.OrdinalIgnoreCase);
-                    string severity = isError ? "CRITICAL" : "WARNING";
-                    string msg = $"Прибор {eq.Name} ({eq.SerialNumber}) перешёл в нештатный статус: {eq.Status.Name}.";
-                    if (msg.Length > 255) msg = msg.Substring(0, 255);
+                    var eqUnresolvedAlerts = unresolvedAlerts
+                        .Where(a => a.EquipmentId == eq.EquipmentId)
+                        .ToList();
 
-                    var newAlert = new Alert
+                    var primaryAlert = eqUnresolvedAlerts.FirstOrDefault();
+                    if (eqUnresolvedAlerts.Count > 1)
                     {
-                        EquipmentId = eq.EquipmentId,
-                        ReadingLogId = null,
-                        Severity = severity,
-                        Message = msg,
-                        IsResolved = false,
-                        CreatedAt = DateTime.UtcNow
-                    };
-                    context.Alerts.Add(newAlert);
-                    await context.SaveChangesAsync();
-
-                    foreach (var uid in userIds)
-                    {
-                        context.UserAlerts.Add(new UserAlert
+                        foreach (var dup in eqUnresolvedAlerts.Skip(1))
                         {
-                            AlertId = newAlert.AlertId,
-                            UserId = uid,
-                            IsRead = false
-                        });
+                            dup.IsResolved = true;
+                            dup.ResolvedAt = DateTime.UtcNow;
+                        }
+                        await context.SaveChangesAsync();
                     }
-                    await context.SaveChangesAsync();
+
+                    var abnormalLatest = allLatestReadings
+                        .Where(r => r.SerialNumber == eq.SerialNumber
+                            && !string.IsNullOrWhiteSpace(r.Status)
+                            && !r.Status.Equals("ok", StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+
+                    var eqAbnormalLogs = recentAbnormalLogs
+                        .Where(l => l.EquipmentId == eq.EquipmentId)
+                        .ToList();
+
+                    int? newestAbnormalLogId = eqAbnormalLogs.FirstOrDefault()?.ReadingLogId;
+                    bool isDeviceStatusAbnormal = !eq.Status.Name.Equals("ok", StringComparison.OrdinalIgnoreCase);
+
+                    if (abnormalLatest.Count == 0 && !isDeviceStatusAbnormal)
+                    {
+                        if (primaryAlert != null)
+                        {
+                            primaryAlert.IsResolved = true;
+                            primaryAlert.ResolvedAt = DateTime.UtcNow;
+                            await context.SaveChangesAsync();
+                        }
+                        continue;
+                    }
+
+                    var metricParts = new List<string>();
+                    bool hasError = eq.Status.Name.Equals("error", StringComparison.OrdinalIgnoreCase);
+
+                    if (abnormalLatest.Count > 0)
+                    {
+                        foreach (var m in abnormalLatest)
+                        {
+                            if (string.Equals(m.Status, "error", StringComparison.OrdinalIgnoreCase))
+                                hasError = true;
+
+                            string label = !string.IsNullOrWhiteSpace(m.Label) ? m.Label : (m.MetricKey ?? "Параметр");
+                            string unit = string.IsNullOrWhiteSpace(m.Unit) ? "" : $" {m.Unit}";
+                            metricParts.Add($"{label} ({m.Value}{unit})");
+                        }
+                    }
+                    else if (eqAbnormalLogs.Count > 0)
+                    {
+                        var groupedLogs = eqAbnormalLogs
+                            .GroupBy(l => l.ReadingTypeId)
+                            .Select(g => g.First())
+                            .ToList();
+
+                        foreach (var l in groupedLogs)
+                        {
+                            if (l.Status.Name.Equals("error", StringComparison.OrdinalIgnoreCase))
+                                hasError = true;
+
+                            string label = !string.IsNullOrWhiteSpace(l.ReadingType.Name)
+                                ? l.ReadingType.Name
+                                : l.ReadingType.Identifier;
+                            string unit = string.IsNullOrWhiteSpace(l.ReadingType.Unit) ? "" : $" {l.ReadingType.Unit}";
+                            metricParts.Add($"{label} ({l.Value}{unit})");
+                        }
+                    }
+
+                    string severity = hasError ? "CRITICAL" : "WARNING";
+                    string message = metricParts.Count > 0
+                        ? $"{eq.Name}: вне нормы {string.Join(", ", metricParts)}"
+                        : $"{eq.Name}: нештатный статус ({eq.Status.Name})";
+
+                    if (message.Length > 255)
+                        message = message.Substring(0, 252) + "...";
+
+                    if (primaryAlert == null)
+                    {
+                        primaryAlert = new Alert
+                        {
+                            EquipmentId = eq.EquipmentId,
+                            ReadingLogId = newestAbnormalLogId,
+                            Severity = severity,
+                            Message = message,
+                            IsResolved = false,
+                            CreatedAt = DateTime.UtcNow
+                        };
+                        context.Alerts.Add(primaryAlert);
+                        await context.SaveChangesAsync();
+
+                        foreach (var uid in userIds)
+                        {
+                            context.UserAlerts.Add(new UserAlert
+                            {
+                                AlertId = primaryAlert.AlertId,
+                                UserId = uid,
+                                IsRead = false
+                            });
+                        }
+                        await context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        bool messageOrSeverityChanged = primaryAlert.Message != message || primaryAlert.Severity != severity;
+                        if (messageOrSeverityChanged)
+                        {
+                            primaryAlert.Message = message;
+                            primaryAlert.Severity = severity;
+                            primaryAlert.ReadingLogId = newestAbnormalLogId;
+                            primaryAlert.CreatedAt = DateTime.UtcNow;
+
+                            var existingUserAlerts = await context.UserAlerts
+                                .Where(ua => ua.AlertId == primaryAlert.AlertId)
+                                .ToListAsync();
+
+                            foreach (var ua in existingUserAlerts)
+                            {
+                                ua.IsRead = false;
+                                ua.ReadAt = null;
+                            }
+
+                            foreach (var uid in userIds)
+                            {
+                                if (!existingUserAlerts.Any(ua => ua.UserId == uid))
+                                {
+                                    context.UserAlerts.Add(new UserAlert
+                                    {
+                                        AlertId = primaryAlert.AlertId,
+                                        UserId = uid,
+                                        IsRead = false
+                                    });
+                                }
+                            }
+
+                            await context.SaveChangesAsync();
+                        }
+                    }
                 }
 
-                // 3. Гарантируем, что для всех активных алертов (!IsResolved) созданы связки в user_alert для каждого пользователя
                 var activeAlertIds = await context.Alerts
                     .Where(a => !a.IsResolved)
                     .Select(a => a.AlertId)
@@ -10860,6 +11193,11 @@ namespace Signal.Server.Services
                 }
             }
 
+            return await CreateEquipmentLogAsync(dto, equipment, readingType, computedStatusId);
+        }
+
+        private async Task<ReadingLog> CreateEquipmentLogAsync(CreateReadingLogDto dto, Equipment equipment, ReadingType readingType, int computedStatusId)
+        {
             var newLog = new ReadingLog
             {
                 EquipmentId = equipment.EquipmentId,
@@ -10873,10 +11211,8 @@ namespace Signal.Server.Services
             equipment.StatusId = computedStatusId;
             await context.SaveChangesAsync();
 
-            // Перечитываем запись из БД на случай, если PostgreSQL-триггер check_reading_status() сам изменил status_id
             await context.Entry(newLog).ReloadAsync();
 
-            // Синхронизируем таблицы alert и user_alert
             await SyncAlertsWithDatabaseStateAsync();
 
             return newLog;
@@ -11007,24 +11343,49 @@ namespace Signal.Server.Services
         {
             await SyncAlertsWithDatabaseStateAsync();
 
-            return await context.UserAlerts
+            var rawUnread = await context.UserAlerts
                 .Include(ua => ua.Alert)
                 .ThenInclude(a => a.Equipment)
                 .Where(ua => ua.UserId == userId && !ua.IsRead && !ua.Alert.IsResolved)
                 .OrderByDescending(ua => ua.Alert.CreatedAt)
-                .Take(30)
-                .Select(ua => new UserAlertDto(
-                    ua.UserAlertId,
-                    ua.AlertId,
-                    ua.Alert.EquipmentId,
-                    ua.Alert.Equipment.SerialNumber,
-                    ua.Alert.Equipment.Name,
-                    ua.Alert.Severity,
-                    ua.Alert.Message,
-                    ua.IsRead,
-                    ua.Alert.CreatedAt
-                ))
+                .ThenByDescending(ua => ua.UserAlertId)
                 .ToListAsync();
+
+            var groupedByDevice = new List<UserAlertDto>();
+            var duplicateUserAlertsToMarkRead = new List<UserAlert>();
+
+            foreach (var group in rawUnread.GroupBy(ua => ua.Alert.EquipmentId))
+            {
+                var latestForDevice = group.First();
+
+                foreach (var olderDuplicate in group.Skip(1))
+                {
+                    olderDuplicate.IsRead = true;
+                    olderDuplicate.ReadAt = DateTime.UtcNow;
+                    duplicateUserAlertsToMarkRead.Add(olderDuplicate);
+                }
+
+                groupedByDevice.Add(new UserAlertDto(
+                    latestForDevice.UserAlertId,
+                    latestForDevice.AlertId,
+                    latestForDevice.Alert.EquipmentId,
+                    latestForDevice.Alert.Equipment.SerialNumber,
+                    latestForDevice.Alert.Equipment.Name,
+                    latestForDevice.Alert.Severity,
+                    latestForDevice.Alert.Message,
+                    latestForDevice.IsRead,
+                    latestForDevice.Alert.CreatedAt
+                ));
+            }
+
+            if (duplicateUserAlertsToMarkRead.Count > 0)
+            {
+                await context.SaveChangesAsync();
+            }
+
+            return groupedByDevice
+                .Take(MaxNotificationsPerBatch)
+                .ToList();
         }
 
         public async Task<bool> MarkAlertAsReadAsync(int userId, int userAlertId)
@@ -11056,6 +11417,62 @@ namespace Signal.Server.Services
             int activeAlerts = await context.Alerts.CountAsync(a => !a.IsResolved);
 
             return new FleetSummaryDto(total, online, warning, error, activeAlerts, DateTime.UtcNow);
+        }
+
+        public async Task<int?> CreateEquipmentAsync(EquipmentDto dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.SerialNumber) || string.IsNullOrWhiteSpace(dto.Name))
+                return null;
+
+            var statusName = string.IsNullOrWhiteSpace(dto.StatusName) ? "Ok" : dto.StatusName.Trim();
+            var status = await context.Statuses
+                .FirstOrDefaultAsync(s => s.Name.ToLower() == statusName.ToLower())
+                ?? await context.Statuses.FirstOrDefaultAsync(s => s.Name.ToLower() == "ok");
+
+            if (status is null) return null;
+
+            var existing = await context.Equipment
+                .FirstOrDefaultAsync(e => e.SerialNumber == dto.SerialNumber.Trim());
+
+            if (existing is not null)
+            {
+                if (!existing.IsDeleted)
+                    throw new InvalidOperationException("Серийный номер уже занят");
+
+                existing.Name = dto.Name.Trim();
+                existing.Model = string.IsNullOrWhiteSpace(dto.Model) ? "Other" : dto.Model.Trim();
+                existing.StatusId = status.StatusId;
+                existing.IpAddress = string.IsNullOrWhiteSpace(dto.IpAddress) ? existing.IpAddress : dto.IpAddress.Trim();
+                existing.IsDeleted = false;
+                existing.PollEnabled = dto.PollEnabled;
+
+                await context.SaveChangesAsync();
+                await SyncAlertsWithDatabaseStateAsync();
+                return existing.EquipmentId;
+            }
+
+            var equipment = new Equipment
+            {
+                SerialNumber = dto.SerialNumber.Trim(),
+                Name = dto.Name.Trim(),
+                Model = string.IsNullOrWhiteSpace(dto.Model) ? "Other" : dto.Model.Trim(),
+                StatusId = status.StatusId,
+                IpAddress = string.IsNullOrWhiteSpace(dto.IpAddress) ? null : dto.IpAddress.Trim(),
+                IsDeleted = false,
+                PollEnabled = dto.PollEnabled
+            };
+
+            try
+            {
+                context.Equipment.Add(equipment);
+                await context.SaveChangesAsync();
+                await SyncAlertsWithDatabaseStateAsync();
+                return equipment.EquipmentId;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public async Task<bool> DeleteEquipmentAsync(int id)
@@ -11336,21 +11753,21 @@ app.Run();
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.27" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.27">
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.15">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.18.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
   </ItemGroup>
 
 </Project>
@@ -11504,7 +11921,7 @@ namespace Signal.Test
 <file path="Signal.Server/Signal.Test/EquipmentServiceTests.cs">
 using FluentAssertions;
 using Signal.Server.Data.Dtos;
-using Signal.Server.Data.Models.Models;
+using Signal.Server.Data.Models;
 using Signal.Server.Services;
 
 namespace Signal.Test
@@ -11579,7 +11996,7 @@ namespace Signal.Test
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -11589,8 +12006,8 @@ namespace Signal.Test
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
-    <PackageReference Include="FluentAssertions" Version="8.10.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.27" />
+    <PackageReference Include="FluentAssertions" Version="8.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.15" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />

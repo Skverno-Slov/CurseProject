@@ -1,0 +1,17 @@
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.exe
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.deps.json
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.runtimeconfig.json
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.runtimeconfig.dev.json
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.dll
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\bin\Debug\net10.0\Signal.ModemEmulator.pdb
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.AssemblyInfoInputs.cache
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.AssemblyInfo.cs
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.csproj.CoreCompileInputs.cache
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.sourcelink.json
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.dll
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\refint\Signal.ModemEmulator.dll
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.pdb
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.ModemEmulator.genruntimeconfig.cache
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\ref\Signal.ModemEmulator.dll
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.Server\Signal.ModemEmulator\obj\Debug\net10.0\Signal.M.47C5EB5E.Up2Date

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WMqpxgE09yo=",
+  "dgSpecHash": "b6MtOLMK/j0=",
   "success": true,
   "projectFilePath": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.Server\\Signal.agent\\Signal.agent.csproj",
   "expectedPackageFiles": [
@@ -31,11 +31,7 @@
     "C:\\Users\\THUNDER\\.nuget\\packages\\microsoft.extensions.options\\10.0.8\\microsoft.extensions.options.10.0.8.nupkg.sha512",
     "C:\\Users\\THUNDER\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.8\\microsoft.extensions.options.configurationextensions.10.0.8.nupkg.sha512",
     "C:\\Users\\THUNDER\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.8\\microsoft.extensions.primitives.10.0.8.nupkg.sha512",
-    "C:\\Users\\THUNDER\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.8\\system.diagnostics.diagnosticsource.10.0.8.nupkg.sha512",
     "C:\\Users\\THUNDER\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.8\\system.diagnostics.eventlog.10.0.8.nupkg.sha512",
-    "C:\\Users\\THUNDER\\.nuget\\packages\\system.io.pipelines\\10.0.8\\system.io.pipelines.10.0.8.nupkg.sha512",
-    "C:\\Users\\THUNDER\\.nuget\\packages\\system.text.encodings.web\\10.0.8\\system.text.encodings.web.10.0.8.nupkg.sha512",
-    "C:\\Users\\THUNDER\\.nuget\\packages\\system.text.json\\10.0.8\\system.text.json.10.0.8.nupkg.sha512",
     "C:\\Users\\THUNDER\\.nuget\\packages\\telnet\\0.13.1\\telnet.0.13.1.nupkg.sha512"
   ],
   "logs": []

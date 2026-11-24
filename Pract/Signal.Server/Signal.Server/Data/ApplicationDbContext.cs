@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Signal.Server.Data.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace Signal.Server.Data;
 
@@ -46,7 +47,22 @@ public partial class ApplicationDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=signal_track_db;Username=user1;Password=123");
+            var basePath = File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"))
+                ? Directory.GetCurrentDirectory()
+                : AppContext.BaseDirectory;
+
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: true)
+                .AddJsonFile("appsettings.Development.json", optional: true)
+                .AddEnvironmentVariables()
+                .Build();
+
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            if (!string.IsNullOrWhiteSpace(connectionString))
+            {
+                optionsBuilder.UseNpgsql(connectionString);
+            }
         }
     }
 

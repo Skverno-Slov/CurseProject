@@ -104,7 +104,7 @@
     "Params": [
       {
         "Command": "cmd?",
-        "Name": "new_paramtest",
+        "Name": "new_param",
         "Uncorrect": null,
         "Annotations": {
           "0": "Описание"

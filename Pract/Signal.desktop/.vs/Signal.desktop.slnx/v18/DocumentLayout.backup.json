@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|solutionrelative:signal\\signal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|c:\\users\\thunder\\documents\\repos\\rursach\\pract\\signal.desktop\\signal\\viewmodels\\jsonconfigpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A41F4679-37A7-CDBE-84B1-25529F4F1625}|Signal\\Signal.csproj|solutionrelative:signal\\viewmodels\\jsonconfigpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -261,11 +265,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Signal",
+              "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Signal.csproj",
+              "RelativeDocumentMoniker": "Signal\\Signal.csproj",
+              "ToolTip": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Signal.csproj",
+              "RelativeToolTip": "Signal\\Signal.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-23T10:20:10.697Z",
+              "EditorCaption": "",
+              "OwnerCaption": "Signal"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "EquipmentRedactorPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\EquipmentRedactorPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\EquipmentRedactorPage.axaml.cs",
@@ -273,11 +291,12 @@
               "RelativeToolTip": "Signal\\Views\\EquipmentRedactorPage.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:11:40.678Z"
+              "WhenOpened": "2026-06-08T08:11:40.678Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EquipmentRedactorPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\EquipmentRedactorPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\EquipmentRedactorPageViewModel.cs",
@@ -285,11 +304,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\EquipmentRedactorPageViewModel.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAowGUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T23:07:20.51Z"
+              "WhenOpened": "2026-06-10T23:07:20.51Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "Signal\\Services\\ApiService.cs",
@@ -298,24 +318,25 @@
               "ViewState": "AgIAAEMBAAAAAAAAAAAowGUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T14:25:39.057Z",
-              "EditorCaption": ""
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "JsonConfigPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "ToolTip": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\JsonConfigPageViewModel.cs",
               "RelativeToolTip": "Signal\\ViewModels\\JsonConfigPageViewModel.cs",
-              "ViewState": "AgIAAEoBAAAAAAAAAAAowGwBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAAwKQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T01:25:28.653Z",
-              "EditorCaption": ""
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "JsonConfigPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\JsonConfigPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\JsonConfigPage.axaml",
@@ -324,11 +345,11 @@
               "ViewState": "AgIAACcAAAAAAAAAAAAAwEoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-06-11T01:19:12.477Z",
-              "EditorCaption": ""
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EquipmentRedactorPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\EquipmentRedactorPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\EquipmentRedactorPage.axaml",
@@ -336,11 +357,12 @@
               "RelativeToolTip": "Signal\\Views\\EquipmentRedactorPage.axaml",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAwCoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-08T08:11:40.751Z"
+              "WhenOpened": "2026-06-08T08:11:40.751Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "EquipmentPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\EquipmentPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\EquipmentPageViewModel.cs",
@@ -348,11 +370,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\EquipmentPageViewModel.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAowFYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T23:06:35.001Z"
+              "WhenOpened": "2026-06-10T23:06:35.001Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "EquipmentPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\EquipmentPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\EquipmentPage.axaml",
@@ -360,11 +383,12 @@
               "RelativeToolTip": "Signal\\Views\\EquipmentPage.axaml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAwDgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-08T08:07:11.852Z"
+              "WhenOpened": "2026-06-08T08:07:11.852Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EquipmentDto.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\EquipmentDto.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\EquipmentDto.cs",
@@ -372,11 +396,12 @@
               "RelativeToolTip": "Signal\\Dtos\\EquipmentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T23:09:43.031Z"
+              "WhenOpened": "2026-06-10T23:09:43.031Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AuditLogsPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\AuditLogsPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\AuditLogsPage.axaml",
@@ -384,11 +409,12 @@
               "RelativeToolTip": "Signal\\Views\\AuditLogsPage.axaml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-11-08T13:47:36.939Z"
+              "WhenOpened": "2026-11-08T13:47:36.939Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SettingsWindowViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\SettingsWindowViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\SettingsWindowViewModel.cs",
@@ -396,11 +422,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\SettingsWindowViewModel.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAowFoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T07:48:26.216Z"
+              "WhenOpened": "2026-06-03T07:48:26.216Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SettingsWindow.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\SettingsWindow.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\SettingsWindow.axaml",
@@ -408,11 +435,12 @@
               "RelativeToolTip": "Signal\\Views\\SettingsWindow.axaml",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAwFIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-02T09:21:37.561Z"
+              "WhenOpened": "2026-06-02T09:21:37.561Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "NetworkSettings.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Models\\NetworkSettings.cs",
               "RelativeDocumentMoniker": "Signal\\Models\\NetworkSettings.cs",
@@ -420,11 +448,12 @@
               "RelativeToolTip": "Signal\\Models\\NetworkSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T14:21:11.822Z"
+              "WhenOpened": "2026-06-02T14:21:11.822Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AuthTokenHandler.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Services\\AuthTokenHandler.cs",
               "RelativeDocumentMoniker": "Signal\\Services\\AuthTokenHandler.cs",
@@ -432,11 +461,12 @@
               "RelativeToolTip": "Signal\\Services\\AuthTokenHandler.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAEwDoAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T16:04:17.053Z"
+              "WhenOpened": "2026-06-02T16:04:17.053Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SettingsService.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Services\\SettingsService.cs",
               "RelativeDocumentMoniker": "Signal\\Services\\SettingsService.cs",
@@ -444,11 +474,12 @@
               "RelativeToolTip": "Signal\\Services\\SettingsService.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAQwBkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T14:22:42.24Z"
+              "WhenOpened": "2026-06-02T14:22:42.24Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "JsonConfigPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\JsonConfigPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\JsonConfigPage.axaml.cs",
@@ -456,11 +487,12 @@
               "RelativeToolTip": "Signal\\Views\\JsonConfigPage.axaml.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAIAwwBIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T01:19:12.392Z"
+              "WhenOpened": "2026-06-11T01:19:12.392Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SettingsWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\SettingsWindow.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\SettingsWindow.axaml.cs",
@@ -468,11 +500,12 @@
               "RelativeToolTip": "Signal\\Views\\SettingsWindow.axaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:21:37.487Z"
+              "WhenOpened": "2026-06-02T09:21:37.487Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AuditLogDto.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\AuditLogDto.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\AuditLogDto.cs",
@@ -480,11 +513,12 @@
               "RelativeToolTip": "Signal\\Dtos\\AuditLogDto.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA5wBkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-08T13:14:05.166Z"
+              "WhenOpened": "2026-11-08T13:14:05.166Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MainWindow.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\MainWindow.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\MainWindow.axaml",
@@ -492,11 +526,12 @@
               "RelativeToolTip": "Signal\\Views\\MainWindow.axaml",
               "ViewState": "AgIAACoAAAAAAAAAAAAAADkAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-02T09:28:15.449Z"
+              "WhenOpened": "2026-06-02T09:28:15.449Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "MainWindowViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\MainWindowViewModel.cs",
@@ -504,11 +539,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\MainWindowViewModel.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAswFAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:13:40.173Z"
+              "WhenOpened": "2026-06-02T09:13:40.173Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "AuditLogsPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\AuditLogsPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\AuditLogsPageViewModel.cs",
@@ -516,11 +552,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\AuditLogsPageViewModel.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAIwCYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-08T13:14:57.338Z"
+              "WhenOpened": "2026-11-08T13:14:57.338Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "AuditLogsPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\AuditLogsPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\AuditLogsPage.axaml.cs",
@@ -528,11 +565,12 @@
               "RelativeToolTip": "Signal\\Views\\AuditLogsPage.axaml.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-08T13:47:36.657Z"
+              "WhenOpened": "2026-11-08T13:47:36.657Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "LoginWindowViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\LoginWindowViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\LoginWindowViewModel.cs",
@@ -540,11 +578,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\LoginWindowViewModel.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:00:29.824Z"
+              "WhenOpened": "2026-06-02T09:00:29.824Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Program.cs",
               "RelativeDocumentMoniker": "Signal\\Program.cs",
@@ -552,11 +591,12 @@
               "RelativeToolTip": "Signal\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T06:36:32.121Z"
+              "WhenOpened": "2026-06-02T06:36:32.121Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "UserRedactorPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\UserRedactorPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\UserRedactorPageViewModel.cs",
@@ -564,11 +604,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\UserRedactorPageViewModel.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAgwHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T11:25:07.008Z"
+              "WhenOpened": "2026-06-08T11:25:07.008Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AnnotationItemViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\AnnotationItemViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\AnnotationItemViewModel.cs",
@@ -576,11 +617,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\AnnotationItemViewModel.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAiwBcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T01:18:12.924Z"
+              "WhenOpened": "2026-06-11T01:18:12.924Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "UsersPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\UsersPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\UsersPageViewModel.cs",
@@ -588,11 +630,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\UsersPageViewModel.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAjwCUAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T06:38:02.753Z"
+              "WhenOpened": "2026-06-04T06:38:02.753Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "DeviceConfig.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Models\\DeviceConfig.cs",
               "RelativeDocumentMoniker": "Signal\\Models\\DeviceConfig.cs",
@@ -600,11 +643,12 @@
               "RelativeToolTip": "Signal\\Models\\DeviceConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T01:32:51.815Z"
+              "WhenOpened": "2026-06-11T01:32:51.815Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ParamConfig.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Models\\ParamConfig.cs",
               "RelativeDocumentMoniker": "Signal\\Models\\ParamConfig.cs",
@@ -612,11 +656,12 @@
               "RelativeToolTip": "Signal\\Models\\ParamConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T01:33:02.64Z"
+              "WhenOpened": "2026-06-11T01:33:02.64Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "MainViewModelHandler.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Models\\MainViewModelHandler.cs",
               "RelativeDocumentMoniker": "Signal\\Models\\MainViewModelHandler.cs",
@@ -624,11 +669,12 @@
               "RelativeToolTip": "Signal\\Models\\MainViewModelHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T13:24:16.799Z"
+              "WhenOpened": "2026-06-08T13:24:16.799Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ReadingTypeRedactorPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\ReadingTypeRedactorPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\ReadingTypeRedactorPageViewModel.cs",
@@ -636,11 +682,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\ReadingTypeRedactorPageViewModel.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAWwD8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T00:10:10.144Z"
+              "WhenOpened": "2026-06-11T00:10:10.144Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ReadingTypeRedactorPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\ReadingTypeRedactorPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\ReadingTypeRedactorPage.axaml",
@@ -648,11 +695,12 @@
               "RelativeToolTip": "Signal\\Views\\ReadingTypeRedactorPage.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-08T08:12:17.437Z"
+              "WhenOpened": "2026-06-08T08:12:17.437Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ReadingTypeDto.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\ReadingTypeDto.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\ReadingTypeDto.cs",
@@ -660,11 +708,12 @@
               "RelativeToolTip": "Signal\\Dtos\\ReadingTypeDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T00:05:28.831Z"
+              "WhenOpened": "2026-06-11T00:05:28.831Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ReadingTypesPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\ReadingTypesPageViewModel.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\ReadingTypesPageViewModel.cs",
@@ -672,11 +721,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\ReadingTypesPageViewModel.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAewD4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T00:09:49.167Z"
+              "WhenOpened": "2026-06-11T00:09:49.167Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ReadingTypesPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\ReadingTypesPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\ReadingTypesPage.axaml",
@@ -684,11 +734,12 @@
               "RelativeToolTip": "Signal\\Views\\ReadingTypesPage.axaml",
               "ViewState": "AgIAAA4AAAAAAAAAAAAjwCIAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-11T00:09:27.412Z"
+              "WhenOpened": "2026-06-11T00:09:27.412Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "ReadingTypeRedactorPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\ReadingTypeRedactorPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\ReadingTypeRedactorPage.axaml.cs",
@@ -696,11 +747,12 @@
               "RelativeToolTip": "Signal\\Views\\ReadingTypeRedactorPage.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:12:17.36Z"
+              "WhenOpened": "2026-06-08T08:12:17.36Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "ReadingTypesPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\ReadingTypesPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\ReadingTypesPage.axaml.cs",
@@ -708,11 +760,12 @@
               "RelativeToolTip": "Signal\\Views\\ReadingTypesPage.axaml.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T00:09:27.327Z"
+              "WhenOpened": "2026-06-11T00:09:27.327Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "EquipmentPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\EquipmentPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\EquipmentPage.axaml.cs",
@@ -720,11 +773,12 @@
               "RelativeToolTip": "Signal\\Views\\EquipmentPage.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:07:11.785Z"
+              "WhenOpened": "2026-06-08T08:07:11.785Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "ReadingTypeResponce.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\ReadingTypeResponce.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\ReadingTypeResponce.cs",
@@ -732,11 +786,12 @@
               "RelativeToolTip": "Signal\\Dtos\\ReadingTypeResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T00:05:33.879Z"
+              "WhenOpened": "2026-06-11T00:05:33.879Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "LoginWindow.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\LoginWindow.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\LoginWindow.axaml",
@@ -744,11 +799,12 @@
               "RelativeToolTip": "Signal\\Views\\LoginWindow.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-02T09:09:28.261Z"
+              "WhenOpened": "2026-06-02T09:09:28.261Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "UsersPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\UsersPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\UsersPage.axaml.cs",
@@ -756,11 +812,12 @@
               "RelativeToolTip": "Signal\\Views\\UsersPage.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T06:33:41.257Z"
+              "WhenOpened": "2026-06-04T06:33:41.257Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "UserRedactorPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\UserRedactorPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\UserRedactorPage.axaml.cs",
@@ -768,11 +825,12 @@
               "RelativeToolTip": "Signal\\Views\\UserRedactorPage.axaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:11:05.961Z"
+              "WhenOpened": "2026-06-08T08:11:05.961Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "EquipmentResponce.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\EquipmentResponce.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\EquipmentResponce.cs",
@@ -780,11 +838,12 @@
               "RelativeToolTip": "Signal\\Dtos\\EquipmentResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T23:09:53.871Z"
+              "WhenOpened": "2026-06-10T23:09:53.871Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\LoginRequest.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\LoginRequest.cs",
@@ -792,11 +851,12 @@
               "RelativeToolTip": "Signal\\Dtos\\LoginRequest.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T08:59:12.794Z"
+              "WhenOpened": "2026-06-02T08:59:12.794Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "UpdateUserRolesDto.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\UpdateUserRolesDto.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\UpdateUserRolesDto.cs",
@@ -804,11 +864,12 @@
               "RelativeToolTip": "Signal\\Dtos\\UpdateUserRolesDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:42:44.171Z"
+              "WhenOpened": "2026-06-08T08:42:44.171Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "UserRedactorPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\UserRedactorPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\UserRedactorPage.axaml",
@@ -816,11 +877,12 @@
               "RelativeToolTip": "Signal\\Views\\UserRedactorPage.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-08T08:11:06.032Z"
+              "WhenOpened": "2026-06-08T08:11:06.032Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "UsersPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\UsersPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\UsersPage.axaml",
@@ -828,11 +890,12 @@
               "RelativeToolTip": "Signal\\Views\\UsersPage.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-04T06:33:41.456Z"
+              "WhenOpened": "2026-06-04T06:33:41.456Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "LoginWindow.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\LoginWindow.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\LoginWindow.axaml",
@@ -840,11 +903,12 @@
               "RelativeToolTip": "Signal\\Views\\LoginWindow.axaml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-02T09:12:36.895Z"
+              "WhenOpened": "2026-06-02T09:12:36.895Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\UserDto.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\UserDto.cs",
@@ -852,11 +916,12 @@
               "RelativeToolTip": "Signal\\Dtos\\UserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T08:19:47.041Z"
+              "WhenOpened": "2026-06-04T08:19:47.041Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "UsersResponce.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\UsersResponce.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\UsersResponce.cs",
@@ -864,11 +929,12 @@
               "RelativeToolTip": "Signal\\Dtos\\UsersResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T09:20:45.913Z"
+              "WhenOpened": "2026-06-08T09:20:45.913Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "App.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\App.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\App.axaml.cs",
@@ -876,11 +942,12 @@
               "RelativeToolTip": "Signal\\App.axaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T16:41:49.268Z"
+              "WhenOpened": "2026-06-02T16:41:49.268Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\RegisterRequest.cs",
@@ -888,11 +955,12 @@
               "RelativeToolTip": "Signal\\Dtos\\RegisterRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T12:56:56.842Z"
+              "WhenOpened": "2026-06-08T12:56:56.842Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "MainWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\MainWindow.axaml.cs",
@@ -900,11 +968,12 @@
               "RelativeToolTip": "Signal\\Views\\MainWindow.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T07:21:52.337Z"
+              "WhenOpened": "2026-06-02T07:21:52.337Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "RoleSelectionItem.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Models\\RoleSelectionItem.cs",
               "RelativeDocumentMoniker": "Signal\\Models\\RoleSelectionItem.cs",
@@ -912,11 +981,12 @@
               "RelativeToolTip": "Signal\\Models\\RoleSelectionItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T11:24:34.813Z"
+              "WhenOpened": "2026-06-08T11:24:34.813Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "ViewModelBase.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\ViewModels\\ViewModelBase.cs",
               "RelativeDocumentMoniker": "Signal\\ViewModels\\ViewModelBase.cs",
@@ -924,11 +994,12 @@
               "RelativeToolTip": "Signal\\ViewModels\\ViewModelBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T12:24:12.407Z"
+              "WhenOpened": "2026-06-08T12:24:12.407Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "PingResponce.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\PingResponce.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\PingResponce.cs",
@@ -936,11 +1007,12 @@
               "RelativeToolTip": "Signal\\Dtos\\PingResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T08:17:48.096Z"
+              "WhenOpened": "2026-06-03T08:17:48.096Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Dtos\\TokenResponse.cs",
               "RelativeDocumentMoniker": "Signal\\Dtos\\TokenResponse.cs",
@@ -948,11 +1020,12 @@
               "RelativeToolTip": "Signal\\Dtos\\TokenResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T08:59:37.006Z"
+              "WhenOpened": "2026-06-02T08:59:37.006Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "App.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\App.axaml",
               "RelativeDocumentMoniker": "Signal\\App.axaml",
@@ -960,11 +1033,12 @@
               "RelativeToolTip": "Signal\\App.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-02T17:03:22.629Z"
+              "WhenOpened": "2026-06-02T17:03:22.629Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -972,11 +1046,12 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAAcVAAAAAAAAAAAjwBUVAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-06-08T12:18:25.452Z"
+              "WhenOpened": "2026-06-08T12:18:25.452Z",
+              "OwnerCaption": "%3"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "SessionsPage.axaml",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\SessionsPage.axaml",
               "RelativeDocumentMoniker": "Signal\\Views\\SessionsPage.axaml",
@@ -984,11 +1059,12 @@
               "RelativeToolTip": "Signal\\Views\\SessionsPage.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-08T08:00:50.458Z"
+              "WhenOpened": "2026-06-08T08:00:50.458Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "SessionsPage.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\SessionsPage.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\SessionsPage.axaml.cs",
@@ -996,11 +1072,12 @@
               "RelativeToolTip": "Signal\\Views\\SessionsPage.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T08:00:50.257Z"
+              "WhenOpened": "2026-06-08T08:00:50.257Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "SessionContext.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Services\\SessionContext.cs",
               "RelativeDocumentMoniker": "Signal\\Services\\SessionContext.cs",
@@ -1008,11 +1085,12 @@
               "RelativeToolTip": "Signal\\Services\\SessionContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T08:59:58.598Z"
+              "WhenOpened": "2026-06-02T08:59:58.598Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "LoginWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\THUNDER\\Documents\\repos\\rursach\\Pract\\Signal.desktop\\Signal\\Views\\LoginWindow.axaml.cs",
               "RelativeDocumentMoniker": "Signal\\Views\\LoginWindow.axaml.cs",
@@ -1020,7 +1098,8 @@
               "RelativeToolTip": "Signal\\Views\\LoginWindow.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T09:09:28.165Z"
+              "WhenOpened": "2026-06-02T09:09:28.165Z",
+              "OwnerCaption": "%2"
             }
           ]
         }

@@ -192,3 +192,4 @@ C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.desktop\Signal\bin\Debug\n
 C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.desktop\Signal\obj\Debug\net10.0\Signal.csproj.Up2Date
 C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.desktop\Signal\obj\Debug\net10.0\Signal.genruntimeconfig.cache
 C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.desktop\Signal\obj\Debug\net10.0\ref\Signal.dll
+C:\Users\THUNDER\Documents\repos\rursach\Pract\Signal.desktop\Signal\bin\Debug\net10.0\Signal.runtimeconfig.dev.json

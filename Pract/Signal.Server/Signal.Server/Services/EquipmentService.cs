@@ -443,10 +443,10 @@ namespace Signal.Server.Services
                 }
             }
 
-            return await CretaeEquipmentLogAsync(dto, equipment, readingType, computedStatusId);
+            return await CreateEquipmentLogAsync(dto, equipment, readingType, computedStatusId);
         }
 
-        private async Task<ReadingLog> CretaeEquipmentLogAsync(CreateReadingLogDto dto, Equipment equipment, ReadingType readingType, int computedStatusId)
+        private async Task<ReadingLog> CreateEquipmentLogAsync(CreateReadingLogDto dto, Equipment equipment, ReadingType readingType, int computedStatusId)
         {
             var newLog = new ReadingLog
             {
