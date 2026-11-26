@@ -23,8 +23,7 @@
         "runtime": {
           "lib/net10.0/BCrypt-Net-Next.dll": {
             "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0",
-            "localPath": "BCrypt-Net-Next.dll"
+            "fileVersion": "4.2.0.0"
           }
         }
       },
@@ -32,8 +31,7 @@
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
-            "fileVersion": "2.14.1.48190",
-            "localPath": "Humanizer.dll"
+            "fileVersion": "2.14.1.48190"
           }
         }
       },
@@ -44,8 +42,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
             "assemblyVersion": "10.0.15.0",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.AspNetCore.Authentication.JwtBearer.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -53,8 +50,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.Bcl.Cryptography.dll": {
             "assemblyVersion": "10.0.0.2",
-            "fileVersion": "10.0.225.61305",
-            "localPath": "Microsoft.Bcl.Cryptography.dll"
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -62,8 +58,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.Build.Framework.dll": {
             "assemblyVersion": "15.1.0.0",
-            "fileVersion": "18.0.2.52102",
-            "localPath": "Microsoft.Build.Framework.dll"
+            "fileVersion": "18.0.2.52102"
           }
         }
       },
@@ -71,62 +66,48 @@
         "runtime": {
           "lib/net9.0/Microsoft.CodeAnalysis.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.dll"
+            "fileVersion": "5.0.25.56712"
           }
         },
         "resources": {
           "lib/net9.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs",
-            "localPath": "cs/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "cs"
           },
           "lib/net9.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de",
-            "localPath": "de/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "de"
           },
           "lib/net9.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es",
-            "localPath": "es/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "es"
           },
           "lib/net9.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr",
-            "localPath": "fr/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "fr"
           },
           "lib/net9.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it",
-            "localPath": "it/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "it"
           },
           "lib/net9.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja",
-            "localPath": "ja/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "ja"
           },
           "lib/net9.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko",
-            "localPath": "ko/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "ko"
           },
           "lib/net9.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl",
-            "localPath": "pl/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "pl"
           },
           "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR",
-            "localPath": "pt-BR/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "pt-BR"
           },
           "lib/net9.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru",
-            "localPath": "ru/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "ru"
           },
           "lib/net9.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr",
-            "localPath": "tr/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "tr"
           },
           "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans",
-            "localPath": "zh-Hans/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "zh-Hans"
           },
           "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant",
-            "localPath": "zh-Hant/Microsoft.CodeAnalysis.resources.dll"
+            "locale": "zh-Hant"
           }
         }
       },
@@ -137,62 +118,48 @@
         "runtime": {
           "lib/net9.0/Microsoft.CodeAnalysis.CSharp.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.CSharp.dll"
+            "fileVersion": "5.0.25.56712"
           }
         },
         "resources": {
           "lib/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs",
-            "localPath": "cs/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "cs"
           },
           "lib/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de",
-            "localPath": "de/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "de"
           },
           "lib/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es",
-            "localPath": "es/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "es"
           },
           "lib/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr",
-            "localPath": "fr/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "fr"
           },
           "lib/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it",
-            "localPath": "it/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "it"
           },
           "lib/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja",
-            "localPath": "ja/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "ja"
           },
           "lib/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko",
-            "localPath": "ko/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "ko"
           },
           "lib/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl",
-            "localPath": "pl/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "pl"
           },
           "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR",
-            "localPath": "pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "pt-BR"
           },
           "lib/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru",
-            "localPath": "ru/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "ru"
           },
           "lib/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr",
-            "localPath": "tr/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "tr"
           },
           "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans",
-            "localPath": "zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "zh-Hans"
           },
           "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant",
-            "localPath": "zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll"
+            "locale": "zh-Hant"
           }
         }
       },
@@ -207,62 +174,48 @@
         "runtime": {
           "lib/net9.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.CSharp.Workspaces.dll"
+            "fileVersion": "5.0.25.56712"
           }
         },
         "resources": {
           "lib/net9.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "cs",
-            "localPath": "cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "cs"
           },
           "lib/net9.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "de",
-            "localPath": "de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "de"
           },
           "lib/net9.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "es",
-            "localPath": "es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "es"
           },
           "lib/net9.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "fr",
-            "localPath": "fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "fr"
           },
           "lib/net9.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "it",
-            "localPath": "it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "it"
           },
           "lib/net9.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "ja",
-            "localPath": "ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "ja"
           },
           "lib/net9.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "ko",
-            "localPath": "ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "ko"
           },
           "lib/net9.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "pl",
-            "localPath": "pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "pl"
           },
           "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "pt-BR",
-            "localPath": "pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "pt-BR"
           },
           "lib/net9.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "ru",
-            "localPath": "ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "ru"
           },
           "lib/net9.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "tr",
-            "localPath": "tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "tr"
           },
           "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "zh-Hans",
-            "localPath": "zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "zh-Hans"
           },
           "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
-            "locale": "zh-Hant",
-            "localPath": "zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll"
+            "locale": "zh-Hant"
           }
         }
       },
@@ -275,62 +228,48 @@
         "runtime": {
           "lib/net9.0/Microsoft.CodeAnalysis.Workspaces.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.Workspaces.dll"
+            "fileVersion": "5.0.25.56712"
           }
         },
         "resources": {
           "lib/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "cs",
-            "localPath": "cs/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "cs"
           },
           "lib/net9.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "de",
-            "localPath": "de/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "de"
           },
           "lib/net9.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "es",
-            "localPath": "es/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "es"
           },
           "lib/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "fr",
-            "localPath": "fr/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "fr"
           },
           "lib/net9.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "it",
-            "localPath": "it/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "it"
           },
           "lib/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "ja",
-            "localPath": "ja/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "ja"
           },
           "lib/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "ko",
-            "localPath": "ko/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "ko"
           },
           "lib/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "pl",
-            "localPath": "pl/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "pl"
           },
           "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "pt-BR",
-            "localPath": "pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "pt-BR"
           },
           "lib/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "ru",
-            "localPath": "ru/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "ru"
           },
           "lib/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "tr",
-            "localPath": "tr/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "tr"
           },
           "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "zh-Hans",
-            "localPath": "zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "zh-Hans"
           },
           "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll": {
-            "locale": "zh-Hant",
-            "localPath": "zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll"
+            "locale": "zh-Hant"
           }
         }
       },
@@ -346,67 +285,52 @@
         "runtime": {
           "lib/net9.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll"
+            "fileVersion": "5.0.25.56712"
           },
           "lib/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.25.56712",
-            "localPath": "Microsoft.CodeAnalysis.Workspaces.MSBuild.dll"
+            "fileVersion": "5.0.25.56712"
           }
         },
         "resources": {
           "lib/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "cs",
-            "localPath": "cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "cs"
           },
           "lib/net9.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "de",
-            "localPath": "de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "de"
           },
           "lib/net9.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "es",
-            "localPath": "es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "es"
           },
           "lib/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "fr",
-            "localPath": "fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "fr"
           },
           "lib/net9.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "it",
-            "localPath": "it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "it"
           },
           "lib/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "ja",
-            "localPath": "ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "ja"
           },
           "lib/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "ko",
-            "localPath": "ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "ko"
           },
           "lib/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "pl",
-            "localPath": "pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "pl"
           },
           "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "pt-BR",
-            "localPath": "pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "pt-BR"
           },
           "lib/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "ru",
-            "localPath": "ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "ru"
           },
           "lib/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "tr",
-            "localPath": "tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "tr"
           },
           "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "zh-Hans",
-            "localPath": "zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "zh-Hans"
           },
           "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll": {
-            "locale": "zh-Hant",
-            "localPath": "zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+            "locale": "zh-Hant"
           }
         }
       },
@@ -417,8 +341,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
             "assemblyVersion": "10.0.15.0",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.EntityFrameworkCore.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -426,8 +349,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
             "assemblyVersion": "10.0.15.0",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.EntityFrameworkCore.Abstractions.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -446,8 +368,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Design.dll": {
             "assemblyVersion": "10.0.15.0",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.EntityFrameworkCore.Design.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -458,8 +379,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll": {
             "assemblyVersion": "10.0.15.0",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.EntityFrameworkCore.Relational.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -472,8 +392,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
             "assemblyVersion": "10.0.0.15",
-            "fileVersion": "10.0.1526.53008",
-            "localPath": "Microsoft.Extensions.DependencyModel.dll"
+            "fileVersion": "10.0.1526.53008"
           }
         }
       },
@@ -481,8 +400,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.Abstractions.dll": {
             "assemblyVersion": "8.23.0.0",
-            "fileVersion": "8.23.0.26257",
-            "localPath": "Microsoft.IdentityModel.Abstractions.dll"
+            "fileVersion": "8.23.0.26257"
           }
         }
       },
@@ -493,8 +411,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
             "assemblyVersion": "8.23.0.0",
-            "fileVersion": "8.23.0.26257",
-            "localPath": "Microsoft.IdentityModel.JsonWebTokens.dll"
+            "fileVersion": "8.23.0.26257"
           }
         }
       },
@@ -505,8 +422,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.Logging.dll": {
             "assemblyVersion": "8.23.0.0",
-            "fileVersion": "8.23.0.26257",
-            "localPath": "Microsoft.IdentityModel.Logging.dll"
+            "fileVersion": "8.23.0.26257"
           }
         }
       },
@@ -517,8 +433,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.Protocols.dll": {
             "assemblyVersion": "8.19.2.0",
-            "fileVersion": "8.19.2.26195",
-            "localPath": "Microsoft.IdentityModel.Protocols.dll"
+            "fileVersion": "8.19.2.26195"
           }
         }
       },
@@ -530,8 +445,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
             "assemblyVersion": "8.19.2.0",
-            "fileVersion": "8.19.2.26195",
-            "localPath": "Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
+            "fileVersion": "8.19.2.26195"
           }
         }
       },
@@ -543,8 +457,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.IdentityModel.Tokens.dll": {
             "assemblyVersion": "8.23.0.0",
-            "fileVersion": "8.23.0.26257",
-            "localPath": "Microsoft.IdentityModel.Tokens.dll"
+            "fileVersion": "8.23.0.26257"
           }
         }
       },
@@ -552,8 +465,7 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.6.14.0",
-            "fileVersion": "1.6.14.0",
-            "localPath": "Microsoft.OpenApi.dll"
+            "fileVersion": "1.6.14.0"
           }
         }
       },
@@ -561,8 +473,7 @@
         "runtime": {
           "lib/net8.0/Microsoft.VisualStudio.SolutionPersistence.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.52.6595",
-            "localPath": "Microsoft.VisualStudio.SolutionPersistence.dll"
+            "fileVersion": "1.0.52.6595"
           }
         }
       },
@@ -573,8 +484,7 @@
         "runtime": {
           "lib/net6.0/Mono.TextTemplating.dll": {
             "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.1",
-            "localPath": "Mono.TextTemplating.dll"
+            "fileVersion": "3.0.0.1"
           }
         }
       },
@@ -582,8 +492,7 @@
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.4.30916",
-            "localPath": "Newtonsoft.Json.dll"
+            "fileVersion": "13.0.4.30916"
           }
         }
       },
@@ -591,8 +500,7 @@
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
             "assemblyVersion": "10.0.4.0",
-            "fileVersion": "10.0.4.0",
-            "localPath": "Npgsql.dll"
+            "fileVersion": "10.0.4.0"
           }
         }
       },
@@ -605,8 +513,7 @@
         "runtime": {
           "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "10.0.4.0",
-            "fileVersion": "10.0.4.0",
-            "localPath": "Npgsql.EntityFrameworkCore.PostgreSQL.dll"
+            "fileVersion": "10.0.4.0"
           }
         }
       },
@@ -624,8 +531,7 @@
         "runtime": {
           "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll": {
             "assemblyVersion": "6.6.2.0",
-            "fileVersion": "6.6.2.401",
-            "localPath": "Swashbuckle.AspNetCore.Swagger.dll"
+            "fileVersion": "6.6.2.401"
           }
         }
       },
@@ -636,8 +542,7 @@
         "runtime": {
           "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
             "assemblyVersion": "6.6.2.0",
-            "fileVersion": "6.6.2.401",
-            "localPath": "Swashbuckle.AspNetCore.SwaggerGen.dll"
+            "fileVersion": "6.6.2.401"
           }
         }
       },
@@ -645,8 +550,7 @@
         "runtime": {
           "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "assemblyVersion": "6.6.2.0",
-            "fileVersion": "6.6.2.401",
-            "localPath": "Swashbuckle.AspNetCore.SwaggerUI.dll"
+            "fileVersion": "6.6.2.401"
           }
         }
       },
@@ -654,8 +558,7 @@
         "runtime": {
           "lib/net6.0/System.CodeDom.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210",
-            "localPath": "System.CodeDom.dll"
+            "fileVersion": "6.0.21.52210"
           }
         }
       },
@@ -672,8 +575,7 @@
         "runtime": {
           "lib/net9.0/System.Composition.AttributedModel.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809",
-            "localPath": "System.Composition.AttributedModel.dll"
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -684,8 +586,7 @@
         "runtime": {
           "lib/net9.0/System.Composition.Convention.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809",
-            "localPath": "System.Composition.Convention.dll"
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -696,8 +597,7 @@
         "runtime": {
           "lib/net9.0/System.Composition.Hosting.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809",
-            "localPath": "System.Composition.Hosting.dll"
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -705,8 +605,7 @@
         "runtime": {
           "lib/net9.0/System.Composition.Runtime.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809",
-            "localPath": "System.Composition.Runtime.dll"
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -719,8 +618,7 @@
         "runtime": {
           "lib/net9.0/System.Composition.TypedParts.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809",
-            "localPath": "System.Composition.TypedParts.dll"
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -732,8 +630,7 @@
         "runtime": {
           "lib/net10.0/System.IdentityModel.Tokens.Jwt.dll": {
             "assemblyVersion": "8.23.0.0",
-            "fileVersion": "8.23.0.26257",
-            "localPath": "System.IdentityModel.Tokens.Jwt.dll"
+            "fileVersion": "8.23.0.26257"
           }
         }
       }
